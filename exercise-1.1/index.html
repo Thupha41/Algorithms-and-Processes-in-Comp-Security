@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #00bfff;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .container {
+        background-color: #f0f8ff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 600px;
+      }
+
+      h2 {
+        text-align: center;
+        color: #333;
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .row input[type="text"],
+      .row input[type="number"] {
+        width: 70%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .row input[type="checkbox"] {
+        margin-left: 10px;
+      }
+
+      .row button {
+        padding: 8px 15px;
+        background-color: #1e90ff;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .row button:hover {
+        background-color: #0b73cc;
+      }
+
+      .row label {
+        font-size: 16px;
+        color: #333;
+      }
+
+      .row .output {
+        background-color: white;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+        margin-top: 5px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Prime, GCD, and Exponentiation Tool</h2>
+      <div class="row">
+        <button onclick="Exercise1.generateRandomLargeNumber('random1')">
+          Generate Large Number 1
+        </button>
+        <button onclick="Exercise1.generateRandomLargeNumber('random2')">
+          Generate Large Number 2
+        </button>
+      </div>
+      <!-- Random Number 1 and Prime Check -->
+      <div class="row">
+        <label>Number 1:</label>
+        <input type="text" id="random1" />
+        <input type="checkbox" id="checkPrime1" />
+        <label for="checkPrime1">Check Prime No 1</label>
+      </div>
+
+      <!-- Random Number 2 and Prime Check -->
+      <div class="row">
+        <label>Number 2:</label>
+        <input type="text" id="random2" />
+        <input type="checkbox" id="checkPrime2" />
+        <label for="checkPrime2">Check Prime No 2</label>
+      </div>
+
+      <!-- Greatest Common Divisor (GCD) -->
+      <div class="row">
+        <label>Greatest Common Divisor (GCD):</label>
+        <input type="text" id="gcdOutput" placeholder="GCD result" disabled />
+        <button onclick="Exercise1.calculateGCD()">GCD</button>
+      </div>
+
+      <!-- Exponentiation -->
+      <div class="row">
+        <label>Exponentiation:</label>
+        <input type="number" id="baseInput" placeholder="base:" />
+        <input type="number" id="expInput" placeholder="exp:" />
+        <input type="number" id="modInput" placeholder="mod :" />
+        <button onclick="Exercise1.calculateExponentiation()">Calculate</button>
+      </div>
+
+      <!-- Output Field for Exponentiation -->
+      <div class="row">
+        <input
+          type="text"
+          id="expOutput"
+          class="output"
+          placeholder="Result of exponentiation"
+          disabled
+        />
+      </div>
+
+      <!-- Button for Generating Random Prime Numbers -->
+      <div class="row">
+        <button onclick="Exercise1.generateRandomPrime(8)">
+          Generate 8-bit Prime
+        </button>
+        <input
+          type="text"
+          id="randomPrime8"
+          placeholder="8-bit Prime"
+          disabled
+        />
+      </div>
+      <div class="row">
+        <button onclick="Exercise1.generateRandomPrime(16)">
+          Generate 16-bit Prime
+        </button>
+        <input
+          type="text"
+          id="randomPrime16"
+          placeholder="16-bit Prime"
+          disabled
+        />
+      </div>
+      <div class="row">
+        <button onclick="Exercise1.generateRandomPrime(64)">
+          Generate 64-bit Prime
+        </button>
+        <input
+          type="text"
+          id="randomPrime64"
+          placeholder="64-bit Prime"
+          disabled
+        />
+      </div>
+
+      <div class="row">
+        <button id="findLargestPrimes">
+          Find Largest Primes Under Mersenne
+        </button>
+        <input
+          type="text"
+          id="largestPrimesUnderMersenne"
+          placeholder="Largest Primes"
+          disabled
+        />
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
